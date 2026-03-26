@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đá Bóng Vui - Match Center</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">ĐÁ BÓNG VUI</div>
+          <div class="brand-sub">Match Center • Theme Stadium</div>
+        </div>
+      </div>
+      <nav class="actions">
+        <button type="button" class="btn" id="btnCyclePitch">Đổi màu sân</button>
+        <button type="button" class="btn btn-primary" id="btnStart">Bắt đầu</button>
+        <button type="button" class="btn" id="btnReset">Reset</button>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>Trận đấu hôm nay</h1>
+          <p>
+            Trang chủ đề bóng đá dạng sân vận động. Mô phỏng tỉ số tự động khi bạn bấm “Bắt đầu”.
+          </p>
+          <div class="meta">
+            <div class="pill">Giải: Sân Cỏ ảo</div>
+            <div class="pill">Thể thao: Live demo</div>
+            <div class="pill">Chế độ: Dark Stadium</div>
+          </div>
+        </div>
+
+        <div class="stadium" role="img" aria-label="Sân vận động kiểu tối với đèn và khán đài">
+          <div class="stands"></div>
+          <div class="lights" aria-hidden="true"></div>
+          <div class="pitch" id="pitch">
+            <div class="pitch-lines" aria-hidden="true"></div>
+            <div class="scoreboard" aria-live="polite">
+              <div class="team">
+                <div class="team-name" id="homeName">ĐỘI NHÀ</div>
+                <div class="team-score" id="homeScore">0</div>
+              </div>
+              <div class="vs">
+                <div class="vs-label">VS</div>
+                <div class="minute" id="minute">00'</div>
+              </div>
+              <div class="team">
+                <div class="team-name" id="awayName">ĐỐI KHÁCH</div>
+                <div class="team-score" id="awayScore">0</div>
+              </div>
+            </div>
+            <div class="center-circle" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Lịch trận</h2>
+          <div class="schedule">
+            <div class="row"><span>19:00</span><span>Vòng bảng</span></div>
+            <div class="row"><span>20:30</span><span>Bán kết</span></div>
+            <div class="row"><span>22:00</span><span>Chung kết</span></div>
+          </div>
+          <div class="hint">Gợi ý: bấm “Bắt đầu” để tỉ số thay đổi tự động.</div>
+        </article>
+
+        <article class="card">
+          <h2>Thống kê nhanh</h2>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">Tấn công</div>
+              <div class="stat-value" id="statAttack">0%</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Sút cầu môn</div>
+              <div class="stat-value" id="statShots">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Bóng kiểm soát</div>
+              <div class="stat-value" id="statPossession">50%</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-wide">
+          <h2>Ghi chú</h2>
+          <p class="muted">
+            Đây là web tĩnh (frontend thuần) và chạy bằng Docker với Nginx.
+            Bạn có thể thay nội dung chữ/ màu sắc trong `styles.css` và logic mô phỏng trong `app.js`.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> ĐÁ BÓNG VUI</div>
+      <div class="footer-note">Build bằng Docker • Serve bằng Nginx</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
